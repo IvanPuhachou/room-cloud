@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Room Cloud</title>
+</head>
+
+<body id="eventCount">
+<h1>You are in room!</h1>
+<a th:href="@{/design}" id="design">Create new room</a>
+<a th:href="@{/}" id="home">Go back to homepage</a>
+<a th:href="@{/showAll}" id="showAll">Look at all rooms</a>
+
+
+<ul th:object="${room}">
+
+    <div th:switch="${room.isOn()}">
+        <p th:case="true">Lightbulb is on</p>
+        <p th:case="false">Lightbulb is off</p>
+    </div>
+    <li>Id: <span th:text="*{id}"></span></li>
+    <li>Name: <span th:text="*{name}"></span></li>
+    <li>Country name: <span th:text="*{countryName}"></span></li>
+    <li>Time of creation: <span th:text="*{createdAt}"></span></li>
+
+
+    <form method="POST" th:action="@{/oneRoom/change(roomId=${room.getId()})}">
+
+        <a th:if="${room.isOn()}">
+            <button>Turn off</button>
+        </a>
+        <a th:unless="${room.isOn()}">
+            <button>Turn on</button>
+        </a>
+    </form>
+</ul>
+
+
+</div>
+</body>
+</html>

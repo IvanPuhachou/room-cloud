@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Room Cloud</title>
+</head>
+
+<body>
+<h1>We created your room! </h1>
+<img th:src="@{/images/success.png}"/>
+<br>
+<a th:href="@{/design}" id="design">You can create next room </a>
+<br>
+<a th:href="@{/showAll}" id="showAll">Or look at all rooms</a>
+</body>
+</html>

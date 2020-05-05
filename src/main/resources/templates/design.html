@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Room Cloud</title>
+</head>
+
+<body id="eventCount">
+<h1>Create your room!</h1>
+<img th:src="@{/images/CreateRoom.png}"/>
+
+<form method="POST" th:object="${room}">
+    <h3>Create your room:</h3>
+    <input type="text" value="Enter rooms name " th:field="*{name}"/>
+
+    <br/>
+    <select th:field="*{countryName}">
+        <option th:each="string : ${country}" th:value="${string}" th:text="${string}">
+        </option>
+    </select>
+    <br/>
+    <button>Submit your room</button>
+    </div>
+</form>
+
+<a th:href="@{/}" id="home">Go back to homepage</a>
+<br>
+<a th:href="@{/showAll}" id="showAll">Look at all rooms</a>
+
+
+</div>
+</body>
+</html>

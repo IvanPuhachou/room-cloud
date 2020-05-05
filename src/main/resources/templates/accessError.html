@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Room Cloud</title>
+</head>
+
+<body>
+<h1>Sorry, you can't come in the room, that has country different to your</h1>
+<img th:src="@{/images/images.png}"/>
+<br>
+<a th:href="@{/}" id="home">Go back to homepage</a>
+<br>
+<a th:href="@{/design}" id="design">Create new room</a>
+<br>
+<a th:href="@{/showAll}" id="showAll">Look at all rooms</a>
+</body>
+</html>
